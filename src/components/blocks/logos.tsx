@@ -11,75 +11,65 @@ type Company = {
   width: number;
   height: number;
   href: string;
+  useText?: boolean;
 };
 
 export const Logos = () => {
   const topRowCompanies = [
     {
-      name: "Mercury",
-      logo: "/logos/mercury.svg",
-      width: 143,
-      height: 26,
-      href: "https://mercury.com",
+      name: "WhatsApp Business API",
+      logo: "/logos/whatsapp-icon.svg",
+      width: 150,
+      height: 40,
+      href: "https://business.whatsapp.com",
     },
     {
-      name: "Watershed",
-      logo: "/logos/watershed.svg",
-      width: 154,
-      height: 31,
-      href: "https://watershed.com",
+      name: "Google Analytics 4",
+      logo: "/logos/google.svg",
+      width: 150,
+      height: 40,
+      href: "https://analytics.google.com",
     },
     {
-      name: "Retool",
-      logo: "/logos/retool.svg",
-      width: 113,
-      height: 22,
-      href: "https://retool.com",
+      name: "Microsoft Excel / 365",
+      logo: "/logos/excel.svg",
+      width: 120,
+      height: 30,
+      href: "https://www.microsoft.com/microsoft-365",
     },
     {
-      name: "Descript",
-      logo: "/logos/descript.svg",
-      width: 112,
-      height: 27,
-      href: "https://descript.com",
+      name: "OpenAI",
+      logo: "/logos/openai.svg",
+      width: 120,
+      height: 30,
+      href: "https://openai.com",
     },
   ];
 
   const bottomRowCompanies = [
     {
-      name: "Perplexity",
-      logo: "/logos/perplexity.svg",
-      width: 141,
-      height: 32,
-      href: "https://perplexity.com",
+      name: "Next.js",
+      logo: "/logos/nextjs.svg",
+      width: 100,
+      height: 30,
+      href: "https://nextjs.org",
+      useText: true,
     },
     {
-      name: "Monzo",
-      logo: "/logos/monzo.svg",
-      width: 104,
-      height: 18,
-      href: "https://monzo.com",
+      name: "React",
+      logo: "/logos/react.svg",
+      width: 100,
+      height: 30,
+      href: "https://react.dev",
+      useText: true,
     },
     {
-      name: "Ramp",
-      logo: "/logos/ramp.svg",
-      width: 105,
-      height: 28,
-      href: "https://ramp.com",
-    },
-    {
-      name: "Raycast",
-      logo: "/logos/raycast.svg",
-      width: 128,
-      height: 33,
-      href: "https://raycast.com",
-    },
-    {
-      name: "Arc",
-      logo: "/logos/arc.svg",
-      width: 90,
-      height: 28,
-      href: "https://arc.com",
+      name: "Google Ads",
+      logo: "/logos/google-ads.svg",
+      width: 120,
+      height: 30,
+      href: "https://ads.google.com",
+      useText: true,
     },
   ];
 
@@ -88,10 +78,10 @@ export const Logos = () => {
       <div className="container space-y-10 lg:space-y-16">
         <div className="text-center">
           <h2 className="mb-4 text-xl text-balance md:text-2xl lg:text-3xl">
-            Powering the world's best product teams.
+            Integramos tu empresa con las mejores tecnologías globales.
             <br className="max-md:hidden" />
             <span className="text-muted-foreground">
-              From next-gen startups to established enterprises.
+              Conectamos tus sistemas locales con el ecosistema digital mundial para potenciar tu crecimiento.
             </span>
           </h2>
         </div>
@@ -100,10 +90,10 @@ export const Logos = () => {
           {/* Top row - 4 logos */}
           <LogoRow companies={topRowCompanies} gridClassName="grid-cols-4" />
 
-          {/* Bottom row - 5 logos */}
+          {/* Bottom row - 3 logos */}
           <LogoRow
             companies={bottomRowCompanies}
-            gridClassName="grid-cols-5"
+            gridClassName="grid-cols-3"
             direction="right"
           />
         </div>
@@ -130,14 +120,25 @@ const LogoRow = ({ companies, gridClassName, direction }: LogoRowProps) => {
           )}
         >
           {companies.map((company, index) => (
-            <Link href={company.href} target="_blank" key={index}>
-              <Image
-                src={company.logo}
-                alt={`${company.name} logo`}
-                width={company.width}
-                height={company.height}
-                className="dark:opacity/100 object-contain opacity-50 transition-opacity hover:opacity-70 dark:invert"
-              />
+            <Link
+              href={company.href}
+              target="_blank"
+              key={index}
+              className="transition-opacity hover:opacity-70"
+            >
+              {company.useText ? (
+                <div className="text-muted-foreground text-center text-sm font-medium opacity-50 transition-opacity hover:opacity-70">
+                  {company.name}
+                </div>
+              ) : (
+                <Image
+                  src={company.logo}
+                  alt={`${company.name} logo`}
+                  width={company.width}
+                  height={company.height}
+                  className="h-8 w-auto max-w-[150px] object-contain opacity-50 transition-opacity hover:opacity-70 dark:opacity-100 dark:invert"
+                />
+              )}
             </Link>
           ))}
         </div>
@@ -153,13 +154,19 @@ const LogoRow = ({ companies, gridClassName, direction }: LogoRowProps) => {
               key={index}
               className="mx-8 inline-block transition-opacity hover:opacity-70"
             >
-              <Image
-                src={company.logo}
-                alt={`${company.name} logo`}
-                width={company.width}
-                height={company.height}
-                className="object-contain"
-              />
+              {company.useText ? (
+                <div className="text-muted-foreground whitespace-nowrap text-sm font-medium">
+                  {company.name}
+                </div>
+              ) : (
+                <Image
+                  src={company.logo}
+                  alt={`${company.name} logo`}
+                  width={company.width}
+                  height={company.height}
+                  className="h-8 w-auto max-w-[150px] object-contain"
+                />
+              )}
             </Link>
           ))}
         </Marquee>

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 import {
@@ -7,53 +9,58 @@ import {
   CircleDot,
   Diamond,
 } from "lucide-react";
+import { motion } from "motion/react";
 
 import { DashedLine } from "@/components/dashed-line";
 import { Button } from "@/components/ui/button";
+import { handleWhatsAppClick } from "@/lib/whatsapp";
 
 const features = [
   {
-    title: "Tailored workflows",
-    description: "Track progress across custom issue flows for your team.",
+    title: "Procesos a Medida",
+    description: "Diseñamos flujos de trabajo digitales que se adaptan a tu operación real, no al revés.",
     icon: CircleDot,
   },
   {
-    title: "Cross-team projects",
-    description: "Collaborate across teams and departments.",
+    title: "Integración Total",
+    description: "Conectamos ventas, operaciones y finanzas en una sola plataforma unificada.",
     icon: Blend,
   },
   {
-    title: "Milestones",
-    description: "Break projects down into concrete phases.",
+    title: "Resultados Medibles",
+    description: "Entregas por fases concretas y KPIs claros desde el día uno.",
     icon: Diamond,
   },
   {
-    title: "Progress insights",
-    description: "Track scope, velocity, and progress over time.",
+    title: "Visibilidad en Tiempo Real",
+    description: "Dashboards ejecutivos para tomar decisiones basadas en datos, no en intuición.",
     icon: ChartNoAxesColumn,
   },
 ];
 
 export const Hero = () => {
   return (
-    <section className="py-28 lg:py-32 lg:pt-44">
-      <div className="container flex flex-col justify-between gap-8 md:gap-14 lg:flex-row lg:gap-20">
+    <section className="flex min-h-[80vh] flex-col justify-center py-28 lg:py-32 lg:pt-44">
+      <div className="container flex flex-col justify-center items-center gap-8 md:gap-14 lg:flex-row lg:gap-[60px]" style={{ paddingLeft: '6px', paddingRight: '6px', marginLeft: '150px', marginRight: '0px', marginTop: '60px' }}>
         {/* Left side - Main content */}
-        <div className="flex-1">
-          <h1 className="text-foreground max-w-160 text-3xl tracking-tight md:text-4xl lg:text-5xl xl:whitespace-nowrap">
-            Mainline Next.js template
-          </h1>
+        <div className="flex-1" style={{ marginLeft: '-20px' }}>
+          <motion.h1
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            className="text-foreground max-w-4xl text-6xl font-black leading-tight tracking-tight md:text-7xl"
+            style={{ marginLeft: '0px' }}
+          >
+            Soluciones Tecnológicas Integrales para Honduras
+          </motion.h1>
 
-          <p className="text-muted-foreground text-1xl mt-5 md:text-3xl">
-            Mainline is an open-source website template built with shadcn/ui,
-            Tailwind 4 & Next.js
+          <p className="text-muted-foreground mt-6 text-lg">
+            Somos MANU.OS. Desarrollamos plataformas web, automatizamos procesos y conectamos tu empresa con las mejores APIs del mundo para reducir costos y escalar operaciones.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4 lg:flex-nowrap">
-            <Button asChild>
-              <a href="https://github.com/shadcnblocks/mainline-nextjs-template">
-                Get template
-              </a>
+            <Button onClick={handleWhatsAppClick}>
+              Agendar Consultoría
             </Button>
             <Button
               variant="outline"
@@ -61,10 +68,10 @@ export const Hero = () => {
               asChild
             >
               <a
-                href="https://shadcnblocks.com"
+                href="#soluciones"
                 className="max-w-56 truncate text-start md:max-w-none"
               >
-                Built by shadcnblocks.com
+                Ver Servicios
                 <ArrowRight className="stroke-3" />
               </a>
             </Button>
@@ -72,7 +79,7 @@ export const Hero = () => {
         </div>
 
         {/* Right side - Features */}
-        <div className="relative flex flex-1 flex-col justify-center space-y-5 max-lg:pt-10 lg:pl-10">
+        <div className="relative flex flex-1 flex-col justify-center space-y-5 max-lg:pt-10" style={{ marginRight: '0px', marginLeft: '100px' }}>
           <DashedLine
             orientation="vertical"
             className="absolute top-0 left-0 max-lg:hidden"
@@ -100,16 +107,21 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className="mt-12 max-lg:ml-6 max-lg:h-[550px] max-lg:overflow-hidden md:mt-20 lg:container lg:mt-24">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+        className="mt-12 max-lg:ml-6 max-lg:h-[550px] max-lg:overflow-hidden md:mt-20 lg:container lg:mt-24"
+      >
         <div className="relative h-[793px] w-full">
           <Image
-            src="/hero.webp"
+            src="/heroweb6.jpg"
             alt="hero"
             fill
             className="rounded-2xl object-cover object-left-top shadow-lg max-lg:rounded-tr-none"
           />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

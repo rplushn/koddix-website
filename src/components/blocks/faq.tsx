@@ -10,52 +10,52 @@ import { cn } from "@/lib/utils";
 
 const categories = [
   {
-    title: "Support",
+    title: "Servicios",
     questions: [
       {
-        question: "How do I update my account without breaking my laptop?",
+        question: "¿Cuánto tiempo toma desarrollar una plataforma a medida?",
         answer:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates deserunt officia temporibus dignissimos.",
+          "Depende de la complejidad. Un sitio corporativo toma de 2 a 4 semanas, mientras que una plataforma a medida (ERP/CRM) puede tomar de 2 a 3 meses. Entregamos cronogramas detallados desde el día uno.",
       },
       {
-        question: "Is support free, or do I need to Google everything?",
+        question: "¿Ofrecen mantenimiento después de entregar el proyecto?",
         answer:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates deserunt officia temporibus dignissimos.",
+          "Sí. Todos nuestros desarrollos incluyen 3 meses de garantía técnica. Después, ofrecemos planes de soporte mensual para actualizaciones, seguridad y mejoras continuas.",
       },
       {
-        question: "Are you going to be subsumed by AI?",
+        question: "¿Pueden integrar Inteligencia Artificial en mi negocio?",
         answer:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates deserunt officia temporibus dignissimos.",
+          "Absolutamente. Implementamos chatbots de atención al cliente, análisis de datos predictivo y automatización de procesos usando las últimas APIs de OpenAI y Anthropic.",
       },
     ],
   },
   {
-    title: "Your account",
+    title: "Pagos y Facturación",
     questions: [
       {
-        question: "Is support free, or do I need to Google everything?",
+        question: "¿Aceptan pagos en Lempiras y Dólares?",
         answer:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates deserunt officia temporibus dignissimos.",
+          "Aceptamos ambas monedas mediante transferencia bancaria local (BAC, Ficohsa, Atlántida) o tarjeta de crédito corporativa.",
       },
       {
-        question: "Are you going to be subsumed by AI?",
+        question: "¿Emiten factura válida para el SAR?",
         answer:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates deserunt officia temporibus dignissimos.",
+          "Sí, somos una empresa legalmente constituida en Honduras. Emitimos factura CAI válida para todos sus efectos fiscales.",
       },
     ],
   },
   {
-    title: "Other questions",
+    title: "Garantía y Soporte",
     questions: [
       {
-        question: "Is support free, or do I need to Google everything?",
+        question: "¿Qué incluye la garantía de sus desarrollos?",
         answer:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates deserunt officia temporibus dignissimos.",
+          "Corrección de cualquier error de código (bug) que aparezca durante los primeros 90 días, sin costo adicional.",
       },
       {
-        question: "Are you going to be subsumed by AI?",
+        question: "¿Cómo reporto un fallo crítico en mi sistema?",
         answer:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates deserunt officia temporibus dignissimos.",
+          "Nuestros clientes tienen acceso a un canal de soporte prioritario vía WhatsApp y Email con tiempos de respuesta garantizados menores a 4 horas.",
       },
     ],
   },
@@ -77,17 +77,17 @@ export const FAQ = ({
           <div className="space-y-4">
             {headerTag === "h1" ? (
               <h1 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
-                Got Questions?
+                ¿Tienes Preguntas?
               </h1>
             ) : (
               <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
-                Got Questions?
+                ¿Tienes Preguntas?
               </h2>
             )}
             <p className="text-muted-foreground max-w-md leading-snug lg:mx-auto">
-              If you can't find what you're looking for,{" "}
+              Resolvemos tus dudas principales aquí. Si necesitas más detalles,{" "}
               <Link href="/contact" className="underline underline-offset-4">
-                get in touch
+                contáctanos
               </Link>
               .
             </p>

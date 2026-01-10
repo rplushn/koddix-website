@@ -1,17 +1,18 @@
 import Image from "next/image";
 
 import { DashedLine } from "../dashed-line";
+import { FadeIn } from "../fade-in";
 
 import { cn } from "@/lib/utils";
 
 const topItems = [
   {
-    title: "Reusable issue templates.",
+    title: "Consultoría de Software.",
     description:
-      "Draft lightning-fast documents with our Smart Instructions and Templates.",
+      "Analizamos tu infraestructura actual para proponer mejoras escalables.",
     images: [
       {
-        src: "/resource-allocation/templates.webp",
+        src: "/resource-allocation/consultoria3.svg",
         alt: "Issue template interface",
         width: 495,
         height: 186,
@@ -22,8 +23,8 @@ const topItems = [
     fade: [""],
   },
   {
-    title: "Simplify your stack.",
-    description: "No more Confluence, SharePoint, or Microsoft Word.",
+    title: "Integración de APIs.",
+    description: "Conectamos tus herramientas favoritas en un solo ecosistema.",
     images: [
       { src: "/logos/jira.svg", alt: "Jira logo", width: 48, height: 48 },
       { src: "/logos/excel.svg", alt: "Excel logo", width: 48, height: 48 },
@@ -62,12 +63,12 @@ const topItems = [
 
 const bottomItems = [
   {
-    title: "Graveyard it.",
+    title: "Desarrollo a Medida",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do.",
+      "Te escuchamos y te ayudamos a desarrollar tu proyecto de manera eficiente y escalable.",
     images: [
       {
-        src: "/resource-allocation/graveyard.webp",
+        src: "/resource-allocation/desarrollomedida.svg",
         alt: "Graveyard interface",
         width: 305,
         height: 280,
@@ -78,12 +79,12 @@ const bottomItems = [
     fade: ["bottom"],
   },
   {
-    title: "Task discussions.",
+    title: "Soporte Local",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.",
+      "Desde nuestras oficinas en Tegucigalpa, te ofrecemos soporte local y personalizado.",
     images: [
       {
-        src: "/resource-allocation/discussions.webp",
+        src: "/resource-allocation/soportelocal.svg",
         alt: "Task discussions interface",
         width: 320,
         height: 103,
@@ -94,12 +95,12 @@ const bottomItems = [
     fade: [""],
   },
   {
-    title: "Notifications.",
+    title: "Alertas Inteligentes",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.",
+      "Notificamos a tu equipo cuando algo está por fallar y te ayudamos a resolverlo antes de que sea tarde.",
     images: [
       {
-        src: "/resource-allocation/notifications.webp",
+        src: "/resource-allocation/alertasinteligente.svg",
         alt: "Notifications interface",
         width: 305,
         height: 280,
@@ -113,13 +114,14 @@ const bottomItems = [
 
 export const ResourceAllocation = () => {
   return (
-    <section
-      id="resource-allocation"
-      className="overflow-hidden pb-28 lg:pb-32"
-    >
+    <FadeIn>
+      <section
+        id="resource-allocation"
+        className="overflow-hidden pb-28 lg:pb-32"
+      >
       <div className="">
         <h2 className="container text-center text-3xl tracking-tight text-balance sm:text-4xl md:text-5xl lg:text-6xl">
-          Mainline your resource allocation and execution
+          Centraliza tu tecnología, automatiza tu ejecución
         </h2>
 
         <div className="mt-8 md:mt-12 lg:mt-20">
@@ -157,6 +159,7 @@ export const ResourceAllocation = () => {
         />
       </div>
     </section>
+    </FadeIn>
   );
 };
 

@@ -7,6 +7,7 @@ import { Footer } from "@/components/blocks/footer";
 import { Navbar } from "@/components/blocks/navbar";
 import { StyleGlideProvider } from "@/components/styleglide-provider";
 import { ThemeProvider } from "@/components/theme-provider";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 import "@/styles/globals.css";
 
 const dmSans = localFont({
@@ -143,13 +144,15 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
-          enableSystem
+          enableSystem={false}
+          forcedTheme="light"
           disableTransitionOnChange
         >
           <StyleGlideProvider />
           <Navbar />
           <main className="">{children}</main>
           <Footer />
+          <WhatsAppButton />
         </ThemeProvider>
       </body>
     </html>
