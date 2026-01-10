@@ -139,6 +139,7 @@
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-scroll: scroll 30s linear infinite;
 
   @keyframes accordion-down {
     from {
@@ -154,6 +155,14 @@
     }
     to {
       height: 0;
+    }
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
     }
   }
 }
@@ -217,6 +226,9 @@
   }
   .font-mono {
     font-family: var(--font-mono), monospace;
+  }
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
   }
 }
 

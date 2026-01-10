@@ -15,10 +15,10 @@ import { cn } from "@/lib/utils";
 import { handleWhatsAppClick } from "@/lib/whatsapp";
 
 const ITEMS = [
-  { label: "Soluciones", href: "/#soluciones", isExternal: false },
+  { label: "Desarrollo", href: "/desarrollo", isExternal: false },
+  { label: "Soluciones", href: "/soluciones", isExternal: false },
   { label: "Consultoría", href: "/consultoria", isExternal: false },
-  { label: "Desarrollo", href: "/#features", isExternal: false },
-  { label: "Contacto", href: "#", isWhatsApp: true },
+  { label: "Contacto", href: "/contacto", isExternal: false },
 ];
 
 export const Navbar = () => {

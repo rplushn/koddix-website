@@ -7,6 +7,7 @@ import {
   Code,
   BarChart3,
 } from "lucide-react";
+import Image from "next/image";
 
 import { Background } from "@/components/background";
 import { DashedLine } from "@/components/dashed-line";
@@ -21,7 +22,7 @@ export default function ConsultoriaPage() {
         {/* Hero Section */}
         <section className="container mb-28 lg:mb-32">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-3xl tracking-tight md:text-4xl lg:text-5xl">
+            <h1 className="text-3xl tracking-tight md:text-4xl lg:text-[58px] mt-[100px]">
               Consultoría Tecnológica Especializada
             </h1>
             <p className="text-muted-foreground mt-6 text-lg leading-relaxed">
@@ -58,12 +59,14 @@ export default function ConsultoriaPage() {
                 oportunidades de automatización y áreas de mejora.
               </p>
             </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-muted">
-              <div className="flex h-full items-center justify-center">
-                <span className="text-muted-foreground text-sm">
-                  [Imagen Placeholder]
-                </span>
-              </div>
+            <div className="relative overflow-hidden rounded-2xl shadow-xl">
+              <Image
+                src="/resource-allocation/soportelocal.jpg"
+                alt="Consultoría y Soporte Local"
+                width={800}
+                height={600}
+                className="rounded-2xl shadow-xl object-cover w-full h-[400px]"
+              />
             </div>
           </div>
         </section>
