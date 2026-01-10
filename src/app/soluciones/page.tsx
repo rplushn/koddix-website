@@ -4,9 +4,9 @@ import Image from "next/image";
 
 import {
   Code,
-  Workflow,
   Database,
   Smartphone,
+  Workflow,
 } from "lucide-react";
 import { motion } from "motion/react";
 
