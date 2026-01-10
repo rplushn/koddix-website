@@ -109,25 +109,30 @@ type LogoRowProps = {
 };
 
 const LogoRow = ({ companies, gridClassName, direction }: LogoRowProps) => {
+  // Duplicar los logos 6 veces para asegurar scroll continuo en pantallas grandes
+  const duplicatedCompanies = [
+    ...companies,
+    ...companies,
+    ...companies,
+    ...companies,
+    ...companies,
+    ...companies,
+  ];
+
   return (
     <>
-      {/* Desktop static version */}
+      {/* Desktop marquee version */}
       <div className="hidden md:block">
-        <div
-          className={cn(
-            "grid items-center justify-items-center gap-x-20 lg:gap-x-28",
-            gridClassName,
-          )}
-        >
-          {companies.map((company, index) => (
+        <Marquee direction={direction} pauseOnHover>
+          {duplicatedCompanies.map((company, index) => (
             <Link
               href={company.href}
               target="_blank"
-              key={index}
-              className="transition-opacity hover:opacity-70"
+              key={`${company.name}-${index}`}
+              className="mx-8 inline-block transition-opacity hover:opacity-70"
             >
               {company.useText ? (
-                <div className="text-muted-foreground text-center text-sm font-medium opacity-50 transition-opacity hover:opacity-70">
+                <div className="text-muted-foreground whitespace-nowrap text-sm font-medium opacity-50 transition-opacity hover:opacity-70">
                   {company.name}
                 </div>
               ) : (
@@ -141,17 +146,17 @@ const LogoRow = ({ companies, gridClassName, direction }: LogoRowProps) => {
               )}
             </Link>
           ))}
-        </div>
+        </Marquee>
       </div>
 
       {/* Mobile marquee version */}
       <div className="md:hidden">
         <Marquee direction={direction} pauseOnHover>
-          {companies.map((company, index) => (
+          {duplicatedCompanies.map((company, index) => (
             <Link
               href={company.href}
               target="_blank"
-              key={index}
+              key={`${company.name}-${index}`}
               className="mx-8 inline-block transition-opacity hover:opacity-70"
             >
               {company.useText ? (
