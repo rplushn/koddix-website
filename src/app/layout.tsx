@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 
 import type { Metadata } from "next";
 
-import { Footer } from "@/components/blocks/footer";
+import { Footer31 } from "@/components/footer31";
 import { Navbar } from "@/components/blocks/navbar";
 import { StyleGlideProvider } from "@/components/styleglide-provider";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -132,7 +132,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="bg-white">
       <head>
         <script
           async
@@ -140,7 +140,7 @@ export default function RootLayout({
           src="https://tweakcn.com/live-preview.min.js"
         />
       </head>
-      <body className={`${dmSans.variable} ${inter.variable} antialiased`}>
+      <body className={`${dmSans.variable} ${inter.variable} antialiased bg-white min-h-screen flex flex-col`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
@@ -150,8 +150,8 @@ export default function RootLayout({
         >
           <StyleGlideProvider />
           <Navbar />
-          <main className="">{children}</main>
-          <Footer />
+          <main className="flex-1">{children}</main>
+          <Footer31 />
           <WhatsAppButton />
         </ThemeProvider>
       </body>

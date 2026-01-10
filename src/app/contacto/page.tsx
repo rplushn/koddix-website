@@ -148,7 +148,7 @@ export default function ContactPage() {
                 className="relative overflow-hidden rounded-2xl"
               >
                 <Image
-                  src="/features/marketingdata.jpg"
+                  src="/features/soportelocal.jpg"
                   alt="Contacto MANU.OS"
                   width={600}
                   height={500}

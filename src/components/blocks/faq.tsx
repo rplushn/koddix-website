@@ -71,7 +71,7 @@ export const FAQ = ({
   className2?: string;
 }) => {
   return (
-    <section className={cn("py-28 lg:py-32", className)}>
+    <section className={cn("py-28 lg:py-32 bg-white", className)}>
       <div className="container max-w-5xl">
         <div className={cn("mx-auto grid gap-16 lg:grid-cols-2", className2)}>
           <div className="space-y-4">
@@ -86,7 +86,7 @@ export const FAQ = ({
             )}
             <p className="text-muted-foreground max-w-md leading-snug lg:mx-auto">
               Resolvemos tus dudas principales aquí. Si necesitas más detalles,{" "}
-              <Link href="/contact" className="underline underline-offset-4">
+              <Link href="/contacto" className="underline underline-offset-4">
                 contáctanos
               </Link>
               .
