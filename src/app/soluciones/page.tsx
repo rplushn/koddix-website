@@ -160,7 +160,7 @@ export default function SolucionesPage() {
               </div>
               <div className="relative overflow-hidden rounded-2xl shadow-xl">
                 <Image
-                  src="/heroweb3.jpg"
+                  src="/features/desarrolloweb3.jpg"
                   alt="Innovación Tecnológica"
                   width={800}
                   height={600}
@@ -175,7 +175,7 @@ export default function SolucionesPage() {
             <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
               <div className="relative overflow-hidden rounded-2xl shadow-xl lg:order-1">
                 <Image
-                  src="/resource-allocation/desarrolloamedida.jpg"
+                  src="/features/desarrolloweb2.jpg"
                   alt="Procesos a Medida"
                   width={800}
                   height={600}

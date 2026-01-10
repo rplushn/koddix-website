@@ -290,7 +290,7 @@ export default function DesarrolloPage() {
               className="relative h-64 overflow-hidden rounded-xl shadow-lg lg:h-80"
             >
               <Image
-                src="/features/desarrolloweb.jpg"
+                src="/features/frontend2.jpg"
                 alt="Desarrollo Frontend Moderno"
                 width={600}
                 height={400}
@@ -319,7 +319,7 @@ export default function DesarrolloPage() {
               className="relative h-64 overflow-hidden rounded-xl shadow-lg lg:h-80 lg:order-1"
             >
               <Image
-                src="/resource-allocation/desarrolloamedida.jpg"
+                src="/features/frontend1.jpg"
                 alt="Arquitectura Backend Escalable"
                 width={600}
                 height={400}

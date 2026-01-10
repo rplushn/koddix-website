@@ -61,7 +61,7 @@ export default function ConsultoriaPage() {
             </div>
             <div className="relative overflow-hidden rounded-2xl shadow-xl">
               <Image
-                src="/resource-allocation/soportelocal.jpg"
+                src="/features/identificamos.jpg"
                 alt="Consultoría y Soporte Local"
                 width={800}
                 height={600}
