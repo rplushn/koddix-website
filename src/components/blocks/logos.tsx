@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-
 import { cn } from "@/lib/utils";
 
 type Company = {
@@ -74,7 +73,7 @@ export const Logos = () => {
   return (
     <section className="pb-28 lg:pb-32 overflow-hidden">
       <div className="container space-y-10 lg:space-y-16">
-        <div className="text-center">
+        <div className="text-center px-4">
           <h2 className="mb-4 text-xl text-balance md:text-2xl lg:text-3xl">
             Integramos tu empresa con las mejores tecnologías globales.
             <br className="max-md:hidden" />
@@ -85,15 +84,8 @@ export const Logos = () => {
         </div>
 
         <div className="flex w-full flex-col items-center gap-8">
-          {/* Top row - 4 logos */}
-          <LogoRow companies={topRowCompanies} gridClassName="grid-cols-4" />
-
-          {/* Bottom row - 3 logos */}
-          <LogoRow
-            companies={bottomRowCompanies}
-            gridClassName="grid-cols-3"
-            direction="right"
-          />
+          <LogoRow companies={topRowCompanies} />
+          <LogoRow companies={bottomRowCompanies} direction="right" />
         </div>
       </div>
     </section>
@@ -102,26 +94,25 @@ export const Logos = () => {
 
 type LogoRowProps = {
   companies: Company[];
-  gridClassName: string;
   direction?: "left" | "right";
 };
 
-const LogoRow = ({ companies, gridClassName, direction }: LogoRowProps) => {
-  // Renderizar un grupo de logos
-  const renderLogoGroup = (groupIndex: number) => (
-    <div
-      key={groupIndex}
-      className="flex shrink-0 items-center gap-x-16 lg:gap-x-20"
-    >
+const LogoRow = ({ companies, direction = "left" }: LogoRowProps) => {
+  const isReverse = direction === "right";
+  const animationClass = isReverse ? "animate-scroll-reverse" : "animate-scroll";
+
+  // Función para renderizar un set de logos
+  const renderLogos = () => (
+    <div className="flex shrink-0 items-center gap-16 lg:gap-24 px-8 lg:px-12">
       {companies.map((company, index) => (
         <Link
           href={company.href}
           target="_blank"
-          key={`${company.name}-${groupIndex}-${index}`}
-          className="shrink-0 flex items-center justify-center transition-opacity hover:opacity-70"
+          key={`${company.name}-${index}`}
+          className="shrink-0 flex items-center justify-center"
         >
           {company.useText ? (
-            <div className="text-muted-foreground whitespace-nowrap text-sm font-medium opacity-50 transition-opacity hover:opacity-70">
+            <div className="text-muted-foreground whitespace-nowrap text-sm font-medium opacity-50 transition-opacity hover:opacity-100">
               {company.name}
             </div>
           ) : (
@@ -130,7 +121,7 @@ const LogoRow = ({ companies, gridClassName, direction }: LogoRowProps) => {
               alt={`${company.name} logo`}
               width={company.width}
               height={company.height}
-              className="h-8 w-auto max-w-[150px] object-contain opacity-50 transition-opacity hover:opacity-70 dark:opacity-100 dark:invert"
+              className="h-8 w-auto max-w-[150px] object-contain opacity-50 transition-opacity hover:opacity-100 dark:opacity-100 dark:invert"
             />
           )}
         </Link>
@@ -138,30 +129,20 @@ const LogoRow = ({ companies, gridClassName, direction }: LogoRowProps) => {
     </div>
   );
 
-  const isReverse = direction === "right";
-  const animationClass = isReverse
-    ? "animate-scroll-reverse"
-    : "animate-scroll";
-
   return (
-    <div className="relative w-full overflow-hidden mx-auto max-w-7xl">
-      {/* Contenedor deslizante con dos grupos idénticos y mask-image para fade */}
-      <div
-        className={cn(
-          "flex items-center relative z-0",
-          animationClass,
-          "hover:[animation-play-state:paused]",
-        )}
-        style={{
-          width: "fit-content",
-          maskImage:
-            "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
-          WebkitMaskImage:
-            "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
-        }}
-      >
-        {renderLogoGroup(0)}
-        {renderLogoGroup(1)}
+    <div 
+      className="relative w-full max-w-7xl mx-auto overflow-hidden"
+      style={{
+        maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+        WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)"
+      }}
+    >
+      <div className={cn("flex w-max", animationClass)}>
+        {/* Renderizamos 4 copias para asegurar el loop infinito en pantallas grandes */}
+        {renderLogos()}
+        {renderLogos()}
+        {renderLogos()}
+        {renderLogos()}
       </div>
     </div>
   );
