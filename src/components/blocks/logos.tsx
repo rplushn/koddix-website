@@ -111,14 +111,14 @@ const LogoRow = ({ companies, gridClassName, direction }: LogoRowProps) => {
   const renderLogoGroup = (groupIndex: number) => (
     <div
       key={groupIndex}
-      className="flex shrink-0 items-center gap-x-20 lg:gap-x-28"
+      className="flex shrink-0 items-center gap-x-16 lg:gap-x-20"
     >
       {companies.map((company, index) => (
         <Link
           href={company.href}
           target="_blank"
           key={`${company.name}-${groupIndex}-${index}`}
-          className="shrink-0 transition-opacity hover:opacity-70"
+          className="shrink-0 flex items-center justify-center transition-opacity hover:opacity-70"
         >
           {company.useText ? (
             <div className="text-muted-foreground whitespace-nowrap text-sm font-medium opacity-50 transition-opacity hover:opacity-70">
@@ -144,32 +144,20 @@ const LogoRow = ({ companies, gridClassName, direction }: LogoRowProps) => {
     : "animate-scroll";
 
   return (
-    <div className="relative w-full overflow-hidden">
-      {/* Mask gradient para suavizar bordes */}
-      <div
-        className="absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-background to-transparent pointer-events-none"
-        style={{
-          maskImage: "linear-gradient(to right, black, transparent)",
-          WebkitMaskImage: "linear-gradient(to right, black, transparent)",
-        }}
-      />
-      <div
-        className="absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-background to-transparent pointer-events-none"
-        style={{
-          maskImage: "linear-gradient(to left, black, transparent)",
-          WebkitMaskImage: "linear-gradient(to left, black, transparent)",
-        }}
-      />
-
-      {/* Contenedor deslizante con dos grupos idénticos */}
+    <div className="relative w-full overflow-hidden mx-auto max-w-7xl">
+      {/* Contenedor deslizante con dos grupos idénticos y mask-image para fade */}
       <div
         className={cn(
-          "flex items-center",
+          "flex items-center relative z-0",
           animationClass,
           "hover:[animation-play-state:paused]",
         )}
         style={{
           width: "fit-content",
+          maskImage:
+            "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
         }}
       >
         {renderLogoGroup(0)}
