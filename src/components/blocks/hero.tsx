@@ -40,8 +40,9 @@ const features = [
 
 export const Hero = () => {
   return (
-    <section className="py-28 lg:py-32 lg:pt-44">
+    <section className="flex min-h-[80vh] flex-col justify-center pt-32 pb-28 lg:py-32 lg:pt-44">
       <div className="container flex flex-col justify-between gap-8 md:gap-14 lg:flex-row lg:gap-20">
+        {/* Left side - Main content */}
         <div className="flex-1">
           <motion.h1
             initial={{ opacity: 0 }}
@@ -65,7 +66,7 @@ export const Hero = () => {
               className="from-background h-auto gap-2 bg-linear-to-r to-transparent shadow-md"
               asChild
             >
-              
+              <a
                 href="#soluciones"
                 className="max-w-56 truncate text-start md:max-w-none"
               >
@@ -76,7 +77,8 @@ export const Hero = () => {
           </div>
         </div>
 
-        <div className="relative flex flex-1 flex-col justify-center space-y-5 max-lg:pt-10 lg:pl-10">
+        {/* Right side - Features */}
+        <div className="relative flex flex-1 flex-col justify-center space-y-5 max-lg:pt-10">
           <DashedLine
             orientation="vertical"
             className="absolute top-0 left-0 max-lg:hidden"
@@ -108,7 +110,7 @@ export const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-        className="mt-12 max-lg:ml-6 max-lg:h-[550px] max-lg:overflow-hidden md:mt-20 lg:container lg:mt-24"
+        className="mt-12 max-lg:px-6 max-lg:h-[550px] max-lg:overflow-hidden md:mt-20 lg:container lg:mt-24"
       >
         <div className="relative h-[793px] w-full">
           <Image
