@@ -1,6 +1,6 @@
 import { FAQ } from "@/components/blocks/faq";
 import { Features } from "@/components/blocks/features";
-import { Hero } from "@/components/blocks/hero";
+import { Hero } from "@/components/blocks/HeroSection";
 import { Logos } from "@/components/blocks/logos";
 import { Pricing } from "@/components/blocks/pricing";
 import { ResourceAllocation } from "@/components/blocks/resource-allocation";
