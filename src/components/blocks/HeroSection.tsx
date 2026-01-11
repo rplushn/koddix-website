@@ -39,7 +39,7 @@ const features = [
 export const Hero = () => {
   return (
     // CAMBIO RADICAL 1: w-full y overflow-hidden forzado aquí
-    <section className="relative w-full max-w-[100vw] overflow-x-hidden flex flex-col justify-center pt-32 pb-28 lg:py-32 lg:pt-44">
+    <section className="force-refresh-v1 relative w-full max-w-[100vw] overflow-x-hidden flex flex-col justify-center pt-32 pb-28 lg:py-32 lg:pt-44">
       
       {/* CAMBIO RADICAL 2: px-4 obligatorio y w-full explícito */}
       <div className="container w-full px-4 md:px-6 mx-auto flex flex-col justify-between gap-10 lg:flex-row lg:gap-20">
