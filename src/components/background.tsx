@@ -16,7 +16,8 @@ export const Background = ({
   return (
     <div
       className={cn(
-        "relative w-full left-0 right-0 mx-0 lg:mx-4",
+        "relative w-full left-0 right-0",
+        "mx-0 lg:mx-4",
         variant === "top" &&
           "from-primary/50 via-background to-background/80 rounded-t-none rounded-b-2xl lg:rounded-t-4xl bg-linear-to-b via-20%",
         variant === "bottom" &&
