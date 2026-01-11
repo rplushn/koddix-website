@@ -40,7 +40,7 @@ const features = [
 
 export const Hero = () => {
   return (
-    <section className="flex min-h-[80vh] flex-col justify-center py-28 lg:py-32 lg:pt-44">
+    <section className="flex min-h-[80vh] flex-col justify-center pt-32 pb-28 lg:py-32 lg:pt-44">
       <div className="container flex flex-col justify-center items-center gap-8 md:gap-14 lg:flex-row lg:gap-[60px] w-full px-4 sm:px-6 md:pl-[150px] md:pr-6 mt-[60px]">
         {/* Left side - Main content */}
         <div className="flex-1">
