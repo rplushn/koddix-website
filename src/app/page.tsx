@@ -1,4 +1,3 @@
-import { Background } from "@/components/background";
 import { FAQ } from "@/components/blocks/faq";
 import { Features } from "@/components/blocks/features";
 import { Hero } from "@/components/blocks/hero";
@@ -10,17 +9,13 @@ import { Testimonials } from "@/components/blocks/testimonials";
 export default function Home() {
   return (
     <>
-      <Background className="via-muted to-muted/80">
-        <Hero />
-        <Logos />
-        <Features />
-        <ResourceAllocation />
-      </Background>
+      <Hero />
+      <Logos />
+      <Features />
+      <ResourceAllocation />
       <Testimonials />
-      <Background variant="bottom">
-        <Pricing />
-        <FAQ />
-      </Background>
+      <Pricing />
+      <FAQ />
     </>
   );
 }
