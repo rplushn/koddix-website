@@ -158,7 +158,7 @@ export default function RootLayout({
         >
           <StyleGlideProvider />
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 w-full overflow-x-hidden">{children}</main>
           <Footer31 />
           <WhatsAppButton />
         </ThemeProvider>

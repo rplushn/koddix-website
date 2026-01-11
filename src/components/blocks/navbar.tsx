@@ -1,158 +1,126 @@
-"use client";
+"use client"
 
-import { useState } from "react";
+import { useEffect, useState } from "react"
+import Link from "next/link"
+import { Menu, X } from "lucide-react"
+import { AnimatePresence, motion } from "motion/react"
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
 
-import { Button } from "@/components/ui/button";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuList,
-} from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
-import { handleWhatsAppClick } from "@/lib/whatsapp";
-
-interface NavItem {
-  label: string;
-  href: string;
-  isExternal?: boolean;
-  isWhatsApp?: boolean;
+interface NavbarProps {
+  logo?: React.ReactNode
+  navigation?: {
+    name: string
+    href: string
+  }[]
+  action?: {
+    label: string
+    href: string
+  }
 }
 
-const ITEMS: NavItem[] = [
-  { label: "Desarrollo", href: "/desarrollo", isExternal: false },
-  { label: "Soluciones", href: "/soluciones", isExternal: false },
-  { label: "Consultoría", href: "/consultoria", isExternal: false },
-  { label: "Contacto", href: "/contacto", isExternal: false },
-];
+export function Navbar({
+  logo = <span className="text-lg font-bold">MANU.OS</span>,
+  navigation = [
+    { name: "Soluciones", href: "#soluciones" },
+    { name: "Procesos", href: "#procesos" },
+    { name: "Precios", href: "/pricing" },
+  ],
+  action = {
+    label: "Agendar Consultoría",
+    href: "#contacto",
+  },
+}: NavbarProps) {
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-export const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const pathname = usePathname();
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
-    <section
-      className={cn(
-        "bg-background/70 absolute left-1/2 z-50 w-[min(90%,700px)] -translate-x-1/2 rounded-4xl border backdrop-blur-md transition-all duration-300",
-        "top-5 lg:top-12",
-      )}
+    <header
+       className={cn(
+         // FIX NUCLEAR: Márgenes seguros para móvil
+         "fixed top-6 z-50 transition-all duration-300",
+         "left-4 right-4", 
+         "max-w-2xl mx-auto" 
+       )}
     >
-      <div className="flex items-center justify-between px-6 py-3">
-        <Link href="/" className="flex shrink-0 items-center gap-2">
-          <span 
-            className="text-xl font-bold tracking-[-1.4px]"
-            style={{ fontFamily: '"Roboto", -apple-system, BlinkMacSystemFont, sans-serif' }}
-          >
-            MANU.OS
-          </span>
-        </Link>
-
-        {/* Desktop Navigation */}
-        <NavigationMenu className="max-lg:hidden">
-          <NavigationMenuList>
-            {ITEMS.map((link) => (
-              <NavigationMenuItem key={link.label} className="">
-                {link.isWhatsApp ? (
-                  <button
-                    onClick={handleWhatsAppClick}
-                    className={cn(
-                      "relative bg-transparent px-1.5 text-sm font-medium transition-opacity hover:opacity-75 cursor-pointer",
-                    )}
-                  >
-                    {link.label}
-                  </button>
-                ) : (
-                  <Link
-                    href={link.href}
-                    className={cn(
-                      "relative bg-transparent px-1.5 text-sm font-medium transition-opacity hover:opacity-75",
-                      pathname === link.href && "text-muted-foreground",
-                    )}
-                  >
-                    {link.label}
-                  </Link>
-                )}
-              </NavigationMenuItem>
-            ))}
-          </NavigationMenuList>
-        </NavigationMenu>
-
-        {/* Auth Buttons */}
-        <div className="flex items-center gap-2.5">
-          <Button
-            variant="outline"
-            onClick={handleWhatsAppClick}
-            className="max-lg:hidden"
-          >
-            <span className="relative z-10">Agendar Cita</span>
-          </Button>
-
-          {/* Hamburger Menu Button (Mobile Only) */}
-          <button
-            className="text-muted-foreground relative flex size-8 lg:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <span className="sr-only">Open main menu</span>
-            <div className="absolute top-1/2 left-1/2 block w-[18px] -translate-x-1/2 -translate-y-1/2">
-              <span
-                aria-hidden="true"
-                className={`absolute block h-0.5 w-full rounded-full bg-current transition duration-500 ease-in-out ${isMenuOpen ? "rotate-45" : "-translate-y-1.5"}`}
-              ></span>
-              <span
-                aria-hidden="true"
-                className={`absolute block h-0.5 w-full rounded-full bg-current transition duration-500 ease-in-out ${isMenuOpen ? "opacity-0" : ""}`}
-              ></span>
-              <span
-                aria-hidden="true"
-                className={`absolute block h-0.5 w-full rounded-full bg-current transition duration-500 ease-in-out ${isMenuOpen ? "-rotate-45" : "translate-y-1.5"}`}
-              ></span>
-            </div>
-          </button>
-        </div>
-      </div>
-
-      {/*  Mobile Menu Navigation */}
-      <div
+      <nav
         className={cn(
-          "bg-background fixed inset-x-0 top-[calc(100%+1rem)] flex flex-col rounded-2xl border p-6 transition-all duration-300 ease-in-out lg:hidden",
-          isMenuOpen
-            ? "visible translate-y-0 opacity-100"
-            : "invisible -translate-y-4 opacity-0",
+          "flex items-center justify-between rounded-full px-6 py-3 transition-all",
+          isScrolled || isMenuOpen
+            ? "bg-background/80 border shadow-md backdrop-blur-md supports-[backdrop-filter]:bg-background/60"
+            : "bg-transparent"
         )}
       >
-        <nav className="divide-border flex flex-1 flex-col divide-y">
-          {ITEMS.map((link) =>
-            link.isWhatsApp ? (
-              <button
-                key={link.label}
-                onClick={() => {
-                  handleWhatsAppClick();
-                  setIsMenuOpen(false);
-                }}
-                className={cn(
-                  "text-primary hover:text-primary/80 py-4 text-base font-medium transition-colors first:pt-0 last:pb-0 text-left w-full cursor-pointer",
-                )}
-              >
-                {link.label}
-              </button>
-            ) : (
-              <Link
-                key={link.label}
-                href={link.href}
-                className={cn(
-                  "text-primary hover:text-primary/80 py-4 text-base font-medium transition-colors first:pt-0 last:pb-0",
-                  pathname === link.href && "text-muted-foreground",
-                )}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
-            )
-          )}
-        </nav>
-      </div>
-    </section>
-  );
-};
+        <div className="flex items-center gap-2">
+          {logo}
+        </div>
+
+        <div className="hidden md:flex items-center gap-6">
+          {navigation.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
+
+        <div className="hidden md:block">
+          <Button asChild size="sm" className="rounded-full">
+            <Link href={action.href}>{action.label}</Link>
+          </Button>
+        </div>
+
+        <button
+          className="md:hidden p-2 -mr-2"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+        </button>
+      </nav>
+
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: -10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: -10 }}
+            className="absolute left-0 right-0 top-full mt-2 rounded-2xl border bg-background/95 p-4 shadow-xl backdrop-blur-md md:hidden"
+          >
+            <div className="flex flex-col gap-4">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="px-4 py-2 text-base font-medium text-foreground hover:bg-muted rounded-lg transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <div className="pt-2 border-t">
+                <Button asChild className="w-full rounded-xl" size="lg">
+                  <Link href={action.href} onClick={() => setIsMenuOpen(false)}>
+                    {action.label}
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
+  )
+}
