@@ -18,7 +18,7 @@ const NAVIGATION = [
 ];
 
 const SOCIAL_LINKS = [
-  { label: "LinkedIn", href: "https://linkedin.com/company/manuos" },
+  { label: "LinkedIn", href: "https://linkedin.com/company/koddix" },
   { label: "WhatsApp", href: "https://wa.me/50489502917" },
 ];
 
@@ -44,7 +44,7 @@ const Footer31 = ({ className }: Footer31Props) => {
             </p>
             <div className="space-y-1 text-sm font-light tracking-tight lg:text-base">
               <p>Contacto : </p>
-              <a href="mailto:hello@manu.os" className="text-white hover:text-white/60">hello@manu.os</a>
+              <a href="mailto:hello@koddix.com" className="text-white hover:text-white/60">hello@koddix.com</a>
             </div>
           </div>
           <div className="grid w-full max-w-md grid-cols-2 gap-10 text-sm font-light lg:text-base lg:ml-auto">
@@ -116,7 +116,7 @@ const Footer31 = ({ className }: Footer31Props) => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="text-[12rem] md:text-[20rem] font-black tracking-tighter text-center leading-none text-white mb-0 pb-0"
             >
-              MANU.OS
+              KODDIX
             </motion.h2>
           </div>
         </div>
