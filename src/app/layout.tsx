@@ -34,7 +34,7 @@ export default function RootLayout({
         className={`${dmSans.variable} font-sans antialiased min-h-screen flex flex-col`}
       >
         <Navbar />
-        <main className="flex-1 flex flex-col">
+        <main className="flex-1">
           {children}
         </main>
         <Footer />
