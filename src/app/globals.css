@@ -188,26 +188,16 @@
   * {
     @apply border-border;
   }
-  html, body {
-    height: 100%;
+  
+  html,
+  body {
     margin: 0;
     padding: 0;
-    background-color: white !important;
   }
 
   body {
     @apply bg-background text-foreground;
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
     overflow-x: hidden;
-    position: relative;
-  }
-
-  html {
-    background-color: #ffffff !important;
   }
   
   *,
@@ -270,14 +260,6 @@
 html,
 body {
   scroll-behavior: smooth;
-  background-color: white;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
   max-width: 100%;
   overscroll-behavior-y: none;
-}
-
-body {
-  position: relative;
 }
