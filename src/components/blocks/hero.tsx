@@ -118,7 +118,7 @@ export const Hero = () => {
     <section className="relative overflow-hidden py-8 lg:py-12 mb-20 lg:mb-24">
       <div className="container relative z-10 mx-auto px-4">
         {/* Card Principal del Hero */}
-        <div className="relative overflow-hidden rounded-[2.5rem] bg-zinc-100 dark:bg-zinc-900 px-6 py-24 shadow-sm md:px-12 lg:px-20 lg:py-32 -mt-12">
+        <div className="relative overflow-hidden rounded-[2.5rem] bg-zinc-100 dark:bg-zinc-900 px-6 pt-32 pb-24 shadow-sm md:px-12 lg:px-20 lg:pt-40 lg:pb-32 -mt-12">
           
           {/* Elementos decorativos de fondo */}
           <div className="absolute -left-20 -top-20 size-96 rounded-full bg-blue-500/10 blur-3xl dark:bg-blue-500/20" />
@@ -126,7 +126,7 @@ export const Hero = () => {
 
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             {/* Columna Izquierda: Texto */}
-            <div className="max-w-2xl">
+            <div className="max-w-2xl mt-4">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
