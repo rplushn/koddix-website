@@ -96,7 +96,7 @@ export const Testimonials = ({
               Resultados reales para empresas que buscan innovación sin complicaciones técnicas.
             </p>
             <Button variant="outline" className="shadow-md">
-              Read our Customer Stories <ArrowRight className="size-4" />
+              Lee las Historias de Nuestros Clientes <ArrowRight className="size-4" />
             </Button>
           </div>
 
