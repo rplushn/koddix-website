@@ -31,9 +31,7 @@ interface Contact16Props {
 
 const Contact16 = ({ className }: Contact16Props) => {
   return (
-    <section
-      className={cn("dark bg-background py-20 text-foreground", className)}
-    >
+    <section className={cn("bg-background py-20 text-foreground", className)}>
       <div className="container">
         <h1 className="text-5xl font-semibold tracking-tight lg:text-8xl">
           Envíanos un Mensaje
@@ -42,7 +40,7 @@ const Contact16 = ({ className }: Contact16Props) => {
         <div className="mt-20 flex flex-col justify-between gap-10 lg:flex-row">
           <div className="w-full max-w-md">
             <p className="tracking-tight text-muted-foreground/50">
-            Tu proyecto merece la mejor atención. Ya sea que tengas una idea disruptiva o necesites optimizar tus operaciones actuales, estamos aquí para escucharte. Cuéntanos brevemente tu desafío y un experto te contactará en menos de 24 horas.
+              Tu proyecto merece la mejor atención. Ya sea que tengas una idea disruptiva o necesites optimizar tus operaciones actuales, estamos aquí para escucharte. Cuéntanos brevemente tu desafío y un experto te contactará en menos de 24 horas.
             </p>
             <div className="mt-10 flex flex-col gap-6">
               <a
@@ -98,7 +96,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="dark bg-background py-20 text-foreground lg:py-32">
+      <section className="bg-background py-20 text-foreground lg:py-32">
         <div className="container">
           <div className="mt-[150px] grid gap-12 lg:grid-cols-2 lg:items-center">
             {/* Columna Izquierda */}
@@ -166,7 +164,7 @@ export default function ContactPage() {
       </div>
 
       {/* Ubicación Section */}
-      <section className="dark bg-background py-20 text-foreground">
+      <section className="bg-background py-20 text-foreground">
         <div className="container">
           <h2 className="mb-12 text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
             Nuestra Base de Operaciones
@@ -194,7 +192,7 @@ export default function ContactPage() {
       </section>
 
       {/* Canales de Atención Section */}
-      <section className="dark bg-background py-20 text-foreground">
+      <section className="bg-background py-20 text-foreground">
         <div className="container">
           <h2 className="mb-12 text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
             Canales de Atención
@@ -261,7 +259,7 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Rápido Section */}
-      <section className="dark bg-background py-20 text-foreground">
+      <section className="bg-background py-20 text-foreground">
         <div className="container max-w-3xl">
           <h2 className="mb-12 text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
             Preguntas Frecuentes
@@ -302,7 +300,7 @@ export default function ContactPage() {
       </section>
 
       {/* CTA Final Section */}
-      <section className="dark bg-background py-20 text-foreground">
+      <section className="bg-background py-20 text-foreground">
         <div className="container">
           <div className="mx-auto max-w-2xl rounded-3xl border border-border/50 bg-background/50 p-12 text-center backdrop-blur-sm">
             <h2 className="mb-4 text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
