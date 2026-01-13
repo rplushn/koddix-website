@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -23,9 +22,10 @@ interface NavItem {
 }
 
 const ITEMS: NavItem[] = [
+  { label: "Inicio", href: "/", isExternal: false },
+  { label: "Desarrollo", href: "/desarrollo", isExternal: false },
   { label: "Soluciones", href: "/soluciones", isExternal: false },
-  { label: "Procesos", href: "/procesos", isExternal: false },
-  { label: "Precios", href: "/pricing", isExternal: false },
+  { label: "Consultoría", href: "/consultoria", isExternal: false },
   { label: "Contacto", href: "/contacto", isExternal: false },
 ];
 
@@ -36,7 +36,7 @@ export const Navbar = () => {
   return (
     <section
       className={cn(
-        "bg-background/70 absolute left-1/2 z-50 w-[min(90%,700px)] -translate-x-1/2 rounded-4xl border backdrop-blur-md transition-all duration-300",
+        "bg-background/70 absolute left-1/2 z-50 w-[min(90%,750px)] -translate-x-1/2 rounded-4xl border backdrop-blur-md transition-all duration-300",
         "top-5 lg:top-12",
       )}
     >
@@ -52,14 +52,14 @@ export const Navbar = () => {
 
         {/* Desktop Navigation */}
         <NavigationMenu className="max-lg:hidden">
-          <NavigationMenuList>
+          <NavigationMenuList className="gap-1">
             {ITEMS.map((link) => (
               <NavigationMenuItem key={link.label} className="">
                 {link.isWhatsApp ? (
                   <button
                     onClick={handleWhatsAppClick}
                     className={cn(
-                      "relative bg-transparent px-1.5 text-sm font-medium transition-opacity hover:opacity-75 cursor-pointer",
+                      "relative bg-transparent px-3 py-2 text-sm font-medium transition-opacity hover:opacity-75 cursor-pointer",
                     )}
                   >
                     {link.label}
@@ -68,7 +68,7 @@ export const Navbar = () => {
                   <Link
                     href={link.href}
                     className={cn(
-                      "relative bg-transparent px-1.5 text-sm font-medium transition-opacity hover:opacity-75",
+                      "relative bg-transparent px-3 py-2 text-sm font-medium transition-opacity hover:opacity-75",
                       pathname === link.href && "text-muted-foreground",
                     )}
                   >
