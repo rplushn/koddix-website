@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { Globe } from "@/components/magicui/globe";
-import { Separator } from "@/components/ui/separator";
 
 const navigationSections = [
   {
@@ -71,10 +70,6 @@ export function Footer() {
               </div>
             ))}
           </div>
-        </div>
-        <Separator className="my-10" />
-        <div className="pb-8 text-center">
-          <p className="text-xs text-muted-foreground">© 2026 Koddix. Todos los derechos reservados.</p>
         </div>
       </div>
       <div className="relative h-60 w-full overflow-hidden lg:h-80 pointer-events-none">
