@@ -18,9 +18,9 @@ const topItems = [
         height: 80,
       },
     ],
-    // Removed margins and translation to keep it tight
+    // ADDED: justify-start and gap-8 to override justify-between and control spacing manually
     className:
-      "flex-1 [&>.title-container]:mb-4 md:[&>.title-container]:mb-4 [&>.image-container]:mt-0",
+      "flex-1 justify-start gap-8 [&>.title-container]:mb-0 [&>.image-container]:mt-0",
     fade: [""],
   },
   {
