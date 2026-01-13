@@ -18,10 +18,10 @@ const topItems = [
         height: 200,
       },
     ],
-    // Keep justify-start and gap-8 for good spacing
     className:
       "flex-1 justify-start gap-8 [&>.title-container]:mb-0 [&>.image-container]:mt-0",
-    fade: [""],
+    // ADDED: "right" to fade array to trigger the gradient overlay
+    fade: ["right"],
   },
   {
     title: "Integración de APIs.",
@@ -187,6 +187,12 @@ const Item = ({ item, isLast, className }: ItemProps) => {
       {item.fade.includes("bottom") && (
         <div className="from-muted/80 absolute inset-0 z-10 bg-linear-to-t via-transparent to-transparent md:hidden" />
       )}
+      
+      {/* ADDED: Logic to render the right fade gradient if 'right' is in the fade array */}
+      {item.fade.includes("right") && (
+         <div className="from-muted/80 absolute inset-y-0 right-0 z-10 w-20 bg-linear-to-l to-transparent pointer-events-none" />
+      )}
+
       {item.images.length > 4 ? (
         <div className="relative overflow-hidden">
           <div className="flex flex-col gap-5">
@@ -229,7 +235,9 @@ const Item = ({ item, isLast, className }: ItemProps) => {
           </div>
         </div>
       ) : (
-        <div className="image-container grid grid-cols-1 gap-4 mt-0">
+        <div className="image-container grid grid-cols-1 gap-4 mt-0 relative"> 
+          {/* Added 'relative' to container to ensure absolute positioned fade works if we wanted it inside, 
+              but the main fade is at 'Item' level. This just keeps it safe. */}
           {item.images.map((image, j) => (
             <Image
               key={j}
@@ -237,7 +245,7 @@ const Item = ({ item, isLast, className }: ItemProps) => {
               alt={image.alt}
               width={image.width}
               height={image.height}
-              className="object-left-top w-full h-auto" // Added w-full h-auto to make it responsive and fill width
+              className="object-left-top w-full h-auto"
             />
           ))}
         </div>
