@@ -142,7 +142,8 @@ export const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="mt-6 text-5xl font-black leading-[1.1] tracking-tight text-zinc-900 dark:text-white md:text-6xl lg:text-7xl"
+                // CHANGED: text-5xl -> text-4xl on mobile to prevent overflow/cutting off
+                className="mt-6 text-4xl sm:text-5xl font-black leading-[1.1] tracking-tight text-zinc-900 dark:text-white md:text-6xl lg:text-7xl"
               >
                 Ingeniería de Software de Clase Mundial
               </motion.h1>
@@ -187,7 +188,8 @@ export const Hero = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="mt-12 flex items-center gap-6 text-sm font-medium text-zinc-500 dark:text-zinc-400"
+                // CHANGED: added flex-wrap to prevent horizontal overflow on small screens
+                className="mt-12 flex flex-wrap items-center gap-4 sm:gap-6 text-sm font-medium text-zinc-500 dark:text-zinc-400"
               >
                 <div className="flex items-center gap-2">
                   <CheckCircle className="size-4 text-green-500" />
