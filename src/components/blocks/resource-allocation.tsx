@@ -18,8 +18,9 @@ const topItems = [
         height: 80,
       },
     ],
+    // Removed margins and translation to keep it tight
     className:
-      "flex-1 [&>.title-container]:mb-5 md:[&>.title-container]:mb-8 xl:[&>.image-container]:translate-x-6 [&>.image-container]:translate-x-2",
+      "flex-1 [&>.title-container]:mb-4 md:[&>.title-container]:mb-4 [&>.image-container]:mt-0",
     fade: [""],
   },
   {
@@ -228,7 +229,7 @@ const Item = ({ item, isLast, className }: ItemProps) => {
           </div>
         </div>
       ) : (
-        <div className="image-container grid grid-cols-1 gap-4">
+        <div className="image-container grid grid-cols-1 gap-4 mt-0">
           {item.images.map((image, j) => (
             <Image
               key={j}
@@ -236,7 +237,7 @@ const Item = ({ item, isLast, className }: ItemProps) => {
               alt={image.alt}
               width={image.width}
               height={image.height}
-              className="object-contain object-left-top"
+              className="object-left-top"
             />
           ))}
         </div>
