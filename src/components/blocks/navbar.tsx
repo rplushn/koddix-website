@@ -45,7 +45,7 @@ export const Navbar = () => {
             className="text-xl font-bold tracking-[-1.4px]"
             style={{ fontFamily: '"Roboto", -apple-system, BlinkMacSystemFont, sans-serif' }}
           >
-            MANU.OS
+            Koddix
           </span>
         </Link>
 
