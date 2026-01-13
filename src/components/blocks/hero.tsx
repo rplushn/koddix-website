@@ -55,7 +55,7 @@ export const Hero = () => {
           </motion.h1>
 
           <p className="text-muted-foreground mt-6 text-lg">
-            Somos MANU.OS. Desarrollamos plataformas web, automatizamos procesos y conectamos tu empresa con las mejores APIs del mundo para reducir costos y escalar operaciones.
+            Somos Koddix. Desarrollamos plataformas web, automatizamos procesos y conectamos tu empresa con las mejores APIs del mundo para reducir costos y escalar operaciones.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4 lg:flex-nowrap">
