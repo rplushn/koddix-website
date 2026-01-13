@@ -18,8 +18,8 @@ const items = [
     image: "/features/marketingdata.jpg",
   },
   {
-    title: "Consultoría Digital",
-    image: "/features/consultoria.jpg",
+    title: "Consultoría de Software",
+    image: "/features/consultoriasoftware4.svg",
   },
 ];
 
