@@ -115,7 +115,7 @@ const CodeWindow = () => {
 
 export const Hero = () => {
   return (
-    <section className="relative overflow-hidden py-5 lg:py-8">
+    <section className="relative overflow-hidden py-8 lg:py-12 mb-20 lg:mb-24">
       <div className="container relative z-10 mx-auto px-4">
         {/* Card Principal del Hero */}
         <div className="relative overflow-hidden rounded-[2.5rem] bg-zinc-100 dark:bg-zinc-900 px-6 py-24 shadow-sm md:px-12 lg:px-20 lg:py-32">
