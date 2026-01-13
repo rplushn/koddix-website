@@ -84,7 +84,7 @@ export function Footer() {
 
       <div className="container border-t border-border pt-8 text-center">
         <p className="text-sm text-muted-foreground">
-          Hecho en Tegucigalpa, Honduras. © 2026 MANU.OS - Soluciones Digitales
+          Hecho en Tegucigalpa, Honduras. © 2026 Koddix - Soluciones Digitales
           Integrales
         </p>
       </div>
