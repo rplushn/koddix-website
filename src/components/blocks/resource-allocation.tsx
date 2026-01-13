@@ -12,15 +12,16 @@ const topItems = [
       "Analizamos tu infraestructura actual para proponer mejoras escalables.",
     images: [
       {
-        src: "/resource-allocation/consultoria3.svg",
+        src: "/features/consultoriasoftware6.svg",
         alt: "Issue template interface",
-        width: 495,
-        height: 186,
+        width: 520,
+        height: 200,
       },
     ],
     className:
-      "flex-1 [&>.title-container]:mb-5 md:[&>.title-container]:mb-8 xl:[&>.image-container]:translate-x-6 [&>.image-container]:translate-x-2",
-    fade: [""],
+      "flex-1 justify-start gap-8 [&>.title-container]:mb-0 [&>.image-container]:mt-0",
+    // CHANGED: "right" to "left" to move the gradient
+    fade: ["left"],
   },
   {
     title: "Integración de APIs.",
@@ -186,6 +187,17 @@ const Item = ({ item, isLast, className }: ItemProps) => {
       {item.fade.includes("bottom") && (
         <div className="from-muted/80 absolute inset-0 z-10 bg-linear-to-t via-transparent to-transparent md:hidden" />
       )}
+      
+      {/* Renders right fade if 'right' is in the fade array */}
+      {item.fade.includes("right") && (
+         <div className="from-muted/80 absolute inset-y-0 right-0 z-10 w-20 bg-linear-to-l to-transparent pointer-events-none" />
+      )}
+      
+      {/* ADDED: Logic to render LEFT fade if 'left' is in the fade array */}
+      {item.fade.includes("left") && (
+         <div className="from-muted/80 absolute inset-y-0 left-0 z-10 w-20 bg-linear-to-r to-transparent pointer-events-none" />
+      )}
+
       {item.images.length > 4 ? (
         <div className="relative overflow-hidden">
           <div className="flex flex-col gap-5">
@@ -228,7 +240,7 @@ const Item = ({ item, isLast, className }: ItemProps) => {
           </div>
         </div>
       ) : (
-        <div className="image-container grid grid-cols-1 gap-4">
+        <div className="image-container grid grid-cols-1 gap-4 mt-0 relative"> 
           {item.images.map((image, j) => (
             <Image
               key={j}
@@ -236,7 +248,7 @@ const Item = ({ item, isLast, className }: ItemProps) => {
               alt={image.alt}
               width={image.width}
               height={image.height}
-              className="object-contain object-left-top"
+              className="object-left-top w-full h-auto"
             />
           ))}
         </div>

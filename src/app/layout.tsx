@@ -64,29 +64,21 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mainline - Modern Next.js Template",
-    template: "%s | Mainline",
+    default: "Koddix - Soluciones Digitales",
+    template: "%s | Koddix",
   },
   description:
-    "A modern Next.js template built with shadcn/ui, Tailwind & MDX. Open source - MIT License.",
+    "Koddix - Transformando ideas en soluciones digitales. Desarrollo web, consultoría y más.",
   keywords: [
+    "Koddix",
+    "Desarrollo Web",
+    "Consultoría Digital",
     "Next.js",
-    "nextjs template",
-    "nextjs theme",
-    "nextjs starter",
-    "shadcn template",
-    "shadcn theme",
-    "shadcn starter",
-    "tailwind template",
-    "tailwind theme",
-    "tailwind starter",
-    "mdx template",
-    "mdx theme",
-    "mdx starter",
+    "Tailwind",
   ],
-  authors: [{ name: "shadcnblocks.com" }],
-  creator: "shadcnblocks.com",
-  publisher: "shadcnblocks.com",
+  authors: [{ name: "Koddix Team" }],
+  creator: "Koddix",
+  publisher: "Koddix",
   robots: {
     index: true,
     follow: true,
@@ -103,26 +95,26 @@ export const metadata: Metadata = {
     shortcut: [{ url: "/favicon/favicon.ico" }],
   },
   openGraph: {
-    title: "Mainline - Modern Next.js Template",
+    title: "Koddix - Soluciones Digitales",
     description:
-      "A modern Next.js template built with shadcn/ui, Tailwind & MDX. Open source - MIT License.",
-    siteName: "Mainline",
+      "Koddix - Transformando ideas en soluciones digitales.",
+    siteName: "Koddix",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Mainline - Modern Next.js Template",
+        alt: "Koddix - Soluciones Digitales",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mainline - Modern Next.js Template",
+    title: "Koddix - Soluciones Digitales",
     description:
-      "A modern Next.js template built with shadcn/ui, Tailwind & MDX. Open source - MIT License.",
+      "Koddix - Transformando ideas en soluciones digitales.",
     images: ["/og-image.jpg"],
-    creator: "@ausrobdev",
+    creator: "@koddix",
   },
 };
 

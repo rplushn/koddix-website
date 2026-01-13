@@ -90,13 +90,13 @@ export const Testimonials = ({
         <div className="container">
           <div className="space-y-4">
             <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
-              ¿Por qué elegir MANU.OS?
+              ¿Por qué elegir KODDIX HONDURAS?
             </h2>
             <p className="text-muted-foreground max-w-md leading-snug">
               Resultados reales para empresas que buscan innovación sin complicaciones técnicas.
             </p>
             <Button variant="outline" className="shadow-md">
-              Read our Customer Stories <ArrowRight className="size-4" />
+              Lee las Historias de Nuestros Clientes <ArrowRight className="size-4" />
             </Button>
           </div>
 

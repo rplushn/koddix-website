@@ -1,112 +1,66 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
 
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { Check } from "lucide-react";
 
-const About = () => {
+import { Badge } from "@/components/ui/badge";
+
+export const About = () => {
   return (
-    <section className="container mt-10 flex max-w-5xl flex-col-reverse gap-8 md:mt-14 md:gap-14 lg:mt-20 lg:flex-row lg:items-end">
-      {/* Images Left - Text Right */}
-      <div className="flex flex-col gap-8 lg:gap-16 xl:gap-20">
-        <ImageSection
-          images={[
-            { src: "/about/1.webp", alt: "Team collaboration" },
-            { src: "/about/2.webp", alt: "Team workspace" },
-          ]}
-          className="xl:-translate-x-10"
-        />
-
-        <TextSection
-          title="The team"
-          paragraphs={[
-            "We started building Mainline in 2019 and launched in 2022. Every endpoint has been designed from the ground up — with no technical debt or legacy systems. We are purpose-built to power project management innovation for the next hundred years.",
-            "We are 100% founder and team-owned, profitable, and we keep our team lean. Over time, this page will become more polished, but for now, we're focused on delivering for developers.",
-            "If you're interested in building the future of PM, check out our open roles below.",
-          ]}
-          ctaButton={{
-            href: "/careers",
-            text: "View open roles",
-          }}
-        />
-      </div>
-
-      {/* Text Left - Images Right */}
-      <div className="flex flex-col gap-8 lg:gap-16 xl:gap-20">
-        <TextSection
-          paragraphs={[
-            "At Mainline, we are dedicated to transforming the way teams plan, execute, and deliver projects. Our mission is to provide our customers with an unbeatable edge over delays, inefficiencies, and disorganisation through actionable insights and seamless collaboration. We'll stop at nothing to give you the tools you need to get every project across the finish line.",
-            "We're customer-obsessed — investing the time to understand every aspect of your workflow so that we can help you operate better than ever before. We're all in this together because your success is our success. In our history as a company, we've never lost a customer, because when your projects succeed, so do we.",
-          ]}
-        />
-        <ImageSection
-          images={[
-            { src: "/about/3.webp", alt: "Modern workspace" },
-            { src: "/about/4.webp", alt: "Team collaboration" },
-          ]}
-          className="hidden lg:flex xl:translate-x-10"
-        />
+    <section className="py-28 lg:py-32">
+      <div className="container flex flex-col gap-10 md:gap-20">
+        <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
+          <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4">
+              <div>
+                <Badge variant="outline">Sobre Nosotros</Badge>
+              </div>
+              <h1 className="max-w-lg text-3xl font-bold tracking-tighter md:text-4xl">
+                ¿Por qué elegir Koddix?
+              </h1>
+              <p className="text-muted-foreground text-lg leading-relaxed tracking-tight">
+                Resultados reales para empresas que buscan innovación sin complicaciones técnicas.
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4">
+              <div className="flex items-start gap-2">
+                <div className="bg-primary/10 rounded-full p-1">
+                  <Check className="text-primary h-4 w-4" />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <h3 className="font-semibold">Reducción de Costos Operativos</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Maria Mendoza, Contabilidad - "Automatizamos reportes que nos tomaban días."
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-2">
+                <div className="bg-primary/10 rounded-full p-1">
+                  <Check className="text-primary h-4 w-4" />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <h3 className="font-semibold">Automatización de Procesos Críticos</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Ing. Roberto Zelaya, Gerente IT - "Integración perfecta con nuestros sistemas."
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-2">
+                <div className="bg-primary/10 rounded-full p-1">
+                  <Check className="text-primary h-4 w-4" />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <h3 className="font-semibold">Soporte Técnico Local 24/7</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Javier López, Fundador - "Siempre responden cuando los necesitamos."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
 };
-
-export default About;
-
-interface ImageSectionProps {
-  images: { src: string; alt: string }[];
-  className?: string;
-}
-
-export function ImageSection({ images, className }: ImageSectionProps) {
-  return (
-    <div className={cn("flex flex-col gap-6", className)}>
-      {images.map((image, index) => (
-        <div
-          key={index}
-          className="relative aspect-[2/1.5] overflow-hidden rounded-2xl"
-        >
-          <Image
-            src={image.src}
-            alt={image.alt}
-            fill
-            className="object-cover"
-          />
-        </div>
-      ))}
-    </div>
-  );
-}
-
-interface TextSectionProps {
-  title?: string;
-  paragraphs: string[];
-  ctaButton?: {
-    href: string;
-    text: string;
-  };
-}
-
-export function TextSection({
-  title,
-  paragraphs,
-  ctaButton,
-}: TextSectionProps) {
-  return (
-    <section className="flex-1 space-y-4 text-lg md:space-y-6">
-      {title && <h2 className="text-foreground text-4xl">{title}</h2>}
-      <div className="text-muted-foreground max-w-xl space-y-6">
-        {paragraphs.map((paragraph, index) => (
-          <p key={index}>{paragraph}</p>
-        ))}
-      </div>
-      {ctaButton && (
-        <div className="mt-8">
-          <Link href={ctaButton.href}>
-            <Button size="lg">{ctaButton.text}</Button>
-          </Link>
-        </div>
-      )}
-    </section>
-  );
-}
