@@ -43,8 +43,8 @@ export const Navbar = () => {
       <div className="flex items-center justify-between px-8 py-3.5">
         <Link href="/" className="inline-block mr-8">
           <h1 className="text-xl font-black tracking-tight">
-            KODDIX
-            <span className="font-normal text-muted-foreground">
+            LINEAL
+            <span className="font-normal text-muted-foreground ml-1">
               HN
             </span>
           </h1>

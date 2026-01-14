@@ -40,9 +40,9 @@ export function Footer() {
             <div>
               <Link href="/" className="inline-block">
                 <h2 className="text-2xl font-black tracking-tight">
-                  KODDIX{" "}
+                  LINEAL
                   <span className="font-normal text-muted-foreground">
-                    HONDURAS
+                    .HN
                   </span>
                 </h2>
               </Link>
@@ -102,7 +102,7 @@ export function Footer() {
         
         <div className="pb-8 text-center">
           <p className="text-xs text-muted-foreground">
-            © 2026 Koddix. Todos los derechos reservados.
+            © 2026 LINEAL. Todos los derechos reservados.
           </p>
         </div>
       </div>

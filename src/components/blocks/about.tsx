@@ -15,7 +15,7 @@ export const About = () => {
                 <Badge variant="outline">Sobre Nosotros</Badge>
               </div>
               <h1 className="max-w-lg text-3xl font-bold tracking-tighter md:text-4xl">
-                ¿Por qué elegir Koddix?
+                ¿Por qué elegir LINEAL?
               </h1>
               <p className="text-muted-foreground text-lg leading-relaxed tracking-tight">
                 Resultados reales para empresas que buscan innovación sin complicaciones técnicas.

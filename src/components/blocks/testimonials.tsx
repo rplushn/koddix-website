@@ -90,7 +90,7 @@ export const Testimonials = ({
         <div className="container">
           <div className="space-y-4">
             <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
-              ¿Por qué elegir KODDIX HONDURAS?
+              ¿Por qué elegir LINEAL HN?
             </h2>
             <p className="text-muted-foreground max-w-md leading-snug">
               Resultados reales para empresas que buscan innovación sin complicaciones técnicas.

@@ -37,7 +37,7 @@ export function Footer() {
             <div>
               <Link href="/" className="inline-block">
                 <h2 className="text-2xl font-black tracking-tight">
-                  KODDIX <span className="font-normal text-muted-foreground">HONDURAS</span>
+                  LINEAL<span className="font-normal text-muted-foreground ml-1">HN</span>
                 </h2>
               </Link>
               <p className="mt-2 text-sm text-muted-foreground">
@@ -49,7 +49,7 @@ export function Footer() {
                 <Phone className="h-4 w-4" /> <span>+504 8950-2917</span>
               </a>
               <a href="mailto:soporte@koddix.com" className="flex items-center gap-3 text-sm font-medium transition-colors hover:text-primary">
-                <Mail className="h-4 w-4" /> <span>soporte@koddix.com</span>
+                <Mail className="h-4 w-4" /> <span>contacto@lineal.hn</span>
               </a>
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4" /> <span>Tegucigalpa, Honduras</span>

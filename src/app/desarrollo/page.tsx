@@ -490,7 +490,7 @@ export default function DesarrolloPage() {
                 className="relative h-64 overflow-hidden rounded-none shadow-lg lg:h-80"
               >
                 <Image
-                  src="/resource-allocation/soportelocal.jpg"
+                  src="/features/soportelocal.jpg"
                   alt="Soporte y Calidad"
                   width={600}
                   height={400}

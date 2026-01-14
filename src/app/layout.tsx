@@ -19,7 +19,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Koddix - Ingeniería de Software y Soluciones Tecnológicas",
+  title: "LINEAL - Ingeniería de Software y Soluciones Tecnológicas",
   description:
     "Desarrollamos plataformas web, automatizamos procesos y conectamos tu empresa con el futuro digital.",
 };

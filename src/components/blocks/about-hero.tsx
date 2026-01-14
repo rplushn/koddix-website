@@ -20,7 +20,7 @@ export const AboutHero = () => {
             Tecnología Mundial al Alcance de Honduras
           </h1>
           <p className="text-muted-foreground text-lg leading-relaxed md:text-xl">
-            KODDIX nació para ayudar a empresas y negocios hondureños a implementar tecnología de clase mundial de forma práctica y accesible.
+            LINEAL nació para ayudar a empresas y negocios hondureños a implementar tecnología de clase mundial de forma práctica y accesible.
           </p>
           <p className="text-muted-foreground text-base leading-relaxed">
             Reducimos la brecha entre lo que antes parecía imposible, costoso y de proyectos largos, a tener las APIs mundiales integradas en plataformas propias construidas con los mismos códigos que usan HOY las empresas TOP del mundo.
@@ -42,7 +42,7 @@ export const AboutHero = () => {
           <div className="relative overflow-hidden rounded-none shadow-2xl">
             <Image
               src="/features/frontend1.jpg"
-              alt="Equipo Koddix"
+              alt="Equipo LINEAL"
               width={700}
               height={500}
               className="rounded-none object-cover w-full h-[400px] lg:h-[500px]"

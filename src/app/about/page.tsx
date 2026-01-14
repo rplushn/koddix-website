@@ -32,7 +32,7 @@ export default function AboutPage() {
                 Nuestra Historia
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Fundada en Florida por hondureños visionarios, KODDIX nació con una misión clara: traer lo mejor de la tecnología mundial a Honduras. Queremos servir a empresas y negocios hondureños, cerrando la brecha tecnológica que antes parecía imposible de superar.
+                Fundada en Florida por hondureños visionarios, LINEAL nació con una misión clara: traer lo mejor de la tecnología mundial a Honduras. Queremos servir a empresas y negocios hondureños, cerrando la brecha tecnológica que antes parecía imposible de superar.
               </p>
             </motion.div>
 

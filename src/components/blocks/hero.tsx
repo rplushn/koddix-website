@@ -104,7 +104,7 @@ const CodeWindow = () => {
              </div>
              <div className="flex gap-2">
                 <span className="text-green-500">➜</span>
-                <span className="text-green-400">Success! Koddix is live. 🚀</span>
+                <span className="text-green-400">Success! LINEAL is live. 🚀</span>
              </div>
           </motion.div>
         </div>
@@ -153,7 +153,7 @@ export const Hero = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="mt-6 text-lg leading-relaxed text-zinc-600 dark:text-zinc-400 md:text-xl"
               >
-                Somos <span className="font-bold text-zinc-900 dark:text-white">Koddix</span>. Desarrollamos plataformas web, automatizamos procesos y conectamos tu empresa con el futuro digital.
+                Somos <span className="font-bold text-zinc-900 dark:text-white">LINEAL</span>. Desarrollamos plataformas web, automatizamos procesos y conectamos tu empresa con el futuro digital.
               </motion.p>
 
               <motion.div

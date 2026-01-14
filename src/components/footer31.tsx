@@ -116,7 +116,7 @@ const Footer31 = ({ className }: Footer31Props) => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="text-[12rem] md:text-[20rem] font-black tracking-tighter text-center leading-none text-white mb-0 pb-0"
             >
-              KODDIX
+              LINEAL
             </motion.h2>
           </div>
         </div>
