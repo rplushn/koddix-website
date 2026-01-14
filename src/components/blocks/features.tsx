@@ -47,7 +47,7 @@ export const Features = () => {
         </div>
 
         {/* Features Card */}
-        <Card className="mt-8 rounded-3xl md:mt-12 lg:mt-20">
+        <Card className="mt-8 rounded-none md:mt-12 lg:mt-20">
           <CardContent className="flex p-0 max-md:flex-col">
             {items.map((item, i) => (
               <div key={i} className="flex flex-1 max-md:flex-col">
@@ -71,7 +71,7 @@ export const Features = () => {
                     <h3 className="font-display max-w-60 text-2xl leading-tight font-bold tracking-tight">
                       {item.title}
                     </h3>
-                    <div className="rounded-full border p-2">
+                    <div className="rounded-none border p-2">
                       <ChevronRight className="size-6 transition-transform group-hover:translate-x-1 lg:size-9" />
                     </div>
                   </Link>
