@@ -23,7 +23,7 @@ const CodeWindow = () => {
         </div>
         <div className="ml-4 flex items-center gap-2 rounded-none bg-black/50 px-2 py-0.5 text-xs text-muted-foreground">
           <Terminal className="size-3" />
-          <span className="font-mono">koddix.config.ts</span>
+          <span className="font-mono">lineal.config.ts</span>
         </div>
       </div>
       
@@ -142,9 +142,9 @@ export const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="mt-6 text-4xl sm:text-5xl font-black leading-[1.1] tracking-tight text-zinc-900 dark:text-white md:text-6xl lg:text-7xl"
+                className="mt-10 text-4xl sm:text-5xl font-black leading-[1.1] tracking-tight text-zinc-900 dark:text-white md:text-6xl lg:text-7xl"
               >
-                Ingeniería de Software de Clase Mundial
+                Software, Cloud y Crecimiento Lineal.
               </motion.h1>
 
               <motion.p
@@ -153,7 +153,8 @@ export const Hero = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="mt-6 text-lg leading-relaxed text-zinc-600 dark:text-zinc-400 md:text-xl"
               >
-                Somos <span className="font-bold text-zinc-900 dark:text-white">LINEAL</span>. Desarrollamos plataformas web, automatizamos procesos y conectamos tu empresa con el futuro digital.
+               Desarrollamos la infraestructura que acelera tu crecimiento de forma  <span className="font-bold text-zinc-900 dark:text-white">LINEAL:</span>  más escalabilidad, menos dolores de cabeza. Software a la medida, infraestructura Cloud y automatizaciones que convierten procesos complejos, en cremiciento real.
+          
               </motion.p>
 
               <motion.div
