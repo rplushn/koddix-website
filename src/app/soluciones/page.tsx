@@ -115,9 +115,9 @@ export default function SolucionesPage() {
                       ease: [0.25, 0.1, 0.25, 1],
                     }}
                   >
-                    <Card className="h-full transition-colors hover:bg-muted/50">
+                    <Card className="h-full transition-colors hover:bg-muted/50 rounded-none">
                       <CardContent className="p-6 md:p-8">
-                        <div className="mb-4 flex size-12 items-center justify-center rounded-lg bg-muted">
+                        <div className="mb-4 flex size-12 items-center justify-center rounded-none bg-muted">
                           <Icon className="size-6" />
                         </div>
                         <h3 className="mb-2 text-xl font-semibold">
@@ -158,13 +158,13 @@ export default function SolucionesPage() {
                   arquitectura sólida.
                 </p>
               </div>
-              <div className="relative overflow-hidden rounded-2xl shadow-xl">
+              <div className="relative overflow-hidden rounded-none shadow-xl">
                 <Image
                   src="/features/desarrolloweb3.jpg"
                   alt="Innovación Tecnológica"
                   width={800}
                   height={600}
-                  className="rounded-2xl shadow-xl object-cover w-full h-[400px]"
+                  className="rounded-none shadow-xl object-cover w-full h-[400px]"
                 />
               </div>
             </div>
@@ -173,13 +173,13 @@ export default function SolucionesPage() {
           {/* Bloque 2: Imagen izquierda, Texto derecha */}
           <FadeIn delay={0.2}>
             <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-              <div className="relative overflow-hidden rounded-2xl shadow-xl lg:order-1">
+              <div className="relative overflow-hidden rounded-none shadow-xl lg:order-1">
                 <Image
                   src="/features/desarrolloweb2.jpg"
                   alt="Procesos a Medida"
                   width={800}
                   height={600}
-                  className="rounded-2xl shadow-xl object-cover w-full h-[400px]"
+                  className="rounded-none shadow-xl object-cover w-full h-[400px]"
                 />
               </div>
               <div className="lg:order-2">
@@ -222,7 +222,7 @@ export default function SolucionesPage() {
                     ease: [0.25, 0.1, 0.25, 1],
                   }}
                 >
-                  <div className="rounded-lg border bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-muted/50">
+                  <div className="rounded-none border bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-muted/50">
                     {tech}
                   </div>
                 </motion.div>
@@ -278,7 +278,7 @@ export default function SolucionesPage() {
                 duration: 0.6,
                 ease: [0.25, 0.1, 0.25, 1],
               }}
-              className="rounded-3xl bg-primary p-8 text-center text-white md:p-12 lg:p-16"
+              className="rounded-none bg-primary p-8 text-center text-white md:p-12 lg:p-16"
             >
               <h2 className="mb-4 text-2xl tracking-tight md:text-3xl lg:text-4xl">
                 ¿Listo para modernizar tu empresa?
